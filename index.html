@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Chat Demo</title>
+        <!-- This is socket.io-client. We need this to expose the global io -->
+        <script defer src="http://localhost:3100/socket.io/socket.io.js"></script>
+        <!-- This is our client side code to handle/trigger the events -->
+        <script defer src="http://localhost:3100/public/script.js"></script>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            #chat-header {
+                width: 80%;
+                max-width: 1200px;
+                padding: 8px;
+                background-color: #99adb2;
+                font-size: 18px;
+            }
+
+            #chat-container {
+                width: 80%;
+                max-width: 1200px;
+                margin: 5px;
+            }
+            #chat-container > div {
+                padding: 8px 0;
+            }
+
+            #chat-container div > span {
+                display: inline-flex;
+                background-color: #cccccc;
+                border-radius: 6px;
+                padding: 5px;
+                max-width: 48%;
+                text-align: left;
+            }
+            #chat-container div.me {
+                text-align: right;
+            }
+
+            #chat-container div.me > span {
+                background-color: #067e46 !important;
+                color: #ffffff;
+            }
+
+            .chat-form {
+                width: 80%;
+                max-width: 1200px;
+                position: absolute;
+                bottom: 0;
+                margin: 5px;
+            }
+
+            #chat-input {
+                width: 90%;
+                height: 24px;
+                line-height: 24px;
+            }
+            #send-chat {
+                width: 9%;
+                height: 24px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="chat-header">Chat</div>
+        <div id="chat-container"></div>
+        <div class="chat-form">
+            <form id="send-container">
+                <input type="text" id="chat-input" placeholder="Type here..." />
+                <button type="submit" id="send-chat">Send</button>
+            </form>
+        </div>
+    </body>
+</html>
